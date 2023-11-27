@@ -14,28 +14,6 @@
         android:layout_height="130dp"
         android:src="@drawable/user"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="30dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="当前网关:"
-            android:textColor="@color/white"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Demokit03"
-            android:textColor="@color/white"
-            android:textSize="20sp"/>
-
-    </LinearLayout>
-
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -99,15 +77,14 @@
         android:textColor="@color/white"
         android:textSize="18sp"/>
 
-        <CheckBox
-            android:id="@+id/cb"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:button="@drawable/cb_custom"
-            android:text="记住密码"
-            android:textColor="@color/white"
-            android:layout_marginTop="23dp"
-            android:layout_marginRight="90dp"
-            android:paddingLeft="5dp"/>
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_custom"
+        android:layout_marginTop="23dp"
+        android:text="注册"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
 
 </LinearLayout>
