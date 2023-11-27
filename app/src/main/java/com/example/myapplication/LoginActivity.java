@@ -108,12 +108,18 @@ public class LoginActivity extends AppCompatActivity {
         String sp_account = getDataByKey(sp1, "account");    // 以String Key 为索引来获取账号
         String sp_password = getDataByKey(sp1, "password");  // 以String Key 为索引来获取密码
 
-        // 用户输入账号密码与本地文件存储的账号密码一致
-        if ((account_et.equals(sp_account)) && (password_et.equals(sp_password))) {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(LoginActivity.this, "账号或密码错误，请重新输入", Toast.LENGTH_SHORT).show();
+        // 1.判断用户输入网关是否在本地文件test.xml中存在
+        // 2.如果不存在提示用户网关不存在
+        // 3.如果存在则判断密码是否与本地文件test.xml中的密码匹配
+        // 4.如果匹配则跳转到主界面
+        // 5.如果不匹配则提示用户密码错误
+        if (account_et.equals(sp_account)) {        // 用户输入网关在本地文件test.xml中存在
+            if(password_et.equals(sp_password)) {   // 用户输入密码与本地文件test.xml中存储的密码匹配
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        } else {    // 用户输入网关在本地文件test.xml中不存在
+            Toast.makeText(LoginActivity.this, "网关不存在", Toast.LENGTH_SHORT).show();
         }
     }
 
