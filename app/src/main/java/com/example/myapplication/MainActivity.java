@@ -5,9 +5,6 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.widget.CompoundButton;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import java.util.ArrayList;
@@ -68,11 +65,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if(checkedId == R.id.rb_device)
-                    viewPager.setCurrentItem(0);
+                    viewPager.setCurrentItem(0, false);
                 else if(checkedId == R.id.rb_qingjing)
-                    viewPager.setCurrentItem(1);
+                    viewPager.setCurrentItem(1,false);
                 else if(checkedId == R.id.rb_sound)
-                    viewPager.setCurrentItem(2);
+                    viewPager.setCurrentItem(2,false);
             }
         });
     }
