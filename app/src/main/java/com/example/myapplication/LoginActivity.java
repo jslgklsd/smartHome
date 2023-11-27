@@ -115,10 +115,15 @@ public class LoginActivity extends AppCompatActivity {
         // 5.如果不匹配则提示用户密码错误
         if (account_et.equals(sp_account)) {        // 用户输入网关在本地文件test.xml中存在
             if(password_et.equals(sp_password)) {   // 用户输入密码与本地文件test.xml中存储的密码匹配
+                // 跳转到主界面
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
+            }else{  // 密码与本地文件test.xml中存储的密码不一致
+                // 提示用户密码不正确
+                Toast.makeText(getApplicationContext(), "密码不正确", Toast.LENGTH_SHORT).show();
             }
         } else {    // 用户输入网关在本地文件test.xml中不存在
+            // 提示用户网关不存在
             Toast.makeText(LoginActivity.this, "网关不存在", Toast.LENGTH_SHORT).show();
         }
     }
